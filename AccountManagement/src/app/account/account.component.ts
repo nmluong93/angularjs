@@ -1,6 +1,7 @@
 import { Component, OnInit, Output,Input, EventEmitter } from '@angular/core';
 import { LoggingService } from '../logging.service';
 import { AccountServcie } from '../account.service';
+import { stat } from 'fs';
 
 
 @Component({
@@ -21,6 +22,6 @@ export class AccountComponent implements OnInit {
   onSetTo(status: string) {
     // this.account.status = status;
     this.accountService.updateAccount(this.id, status);
-    // this.loggingService.logChangeStatus(status);
+    this.accountService.statusUpdate.emit(status);
   }
 }
