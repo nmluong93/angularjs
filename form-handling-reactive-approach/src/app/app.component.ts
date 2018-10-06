@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+import { resolve } from 'url';
 
 @Component({
   selector: 'app-root',
@@ -8,24 +10,50 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  
+
   genders = ['male', 'female'];
-  signupForm : FormGroup;
+  signupForm: FormGroup;
+  forbiddenUsernames = ['Christ', 'Anna'];
 
   ngOnInit() {
     this.signupForm = new FormGroup(
       {
-        'userData' : new FormGroup({
-          'username' : new FormControl(null, Validators.required),
-          'email' : new FormControl(null, [Validators.required, Validators.email])
+        'userData': new FormGroup({
+          'username': new FormControl(null, [Validators.required, this.forbiddenNames.bind(this)]),
+          'email': new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmailAsync)
         }),
-        'gender' : new FormControl('male'),
-
+        'gender': new FormControl('male'),
+        'hobbies': new FormArray([])
       }
     );
   }
 
   onSubmit() {
     console.log(this.signupForm);
+  }
+
+  onAddHobby() {
+    const control = new FormControl(null, null);
+    (<FormArray>this.signupForm.get('hobbies')).push(control);
+  }
+
+  forbiddenNames(control: FormControl): { [s: string]: boolean } {
+    if (this.forbiddenUsernames.indexOf(control.value) !== -1) {
+      return { 'nameIsForbidden': true }
+    }
+    return null;
+  }
+
+  forbiddenEmailAsync(control: FormControl): Promise<any> | Observable<any> {
+    const promise = new Promise<any>((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'test@test.com') {
+          resolve({ 'emailIsForbidden': true });
+        } else {
+          resolve(null);
+        }
+      }, 1500);
+    });
+    return promise;
   }
 }
