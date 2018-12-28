@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+
+      <hr>
+      <p>{{pipeFromServer | async}}</p>
+      <hr>
+
+      <input type="text" #serverName>
+      
+      <hr><hr>
+
+      <button class="btn btn-primary"(click) ="onSave()">Save</button>
+      <hr>
+      <button class="btn btn-primary"(click) ="onGet()">Get server</button>
+      <hr>
+      <button class="btn-btn-primary" (click)="onAddServer(serverName.value)">Add server</button>
+
+      <hr>
+      <ul class="list-group" *ngFor="let ser of servers">
+        <li class="list-group-item"> {{ser.name}} Id : {{ser.id}} : Capacity : {{ser.capacity}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
