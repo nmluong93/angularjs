@@ -1,0 +1,901 @@
+{
+    "settings": {
+        "SETTING_NUMBER_OF_SHARDS": 1,
+        "SETTING_NUMBER_OF_REPLICAS": 0
+    },
+    "mappings": {
+        "Keyfigures.Mandate": {
+            "dynamic_templates": [
+                {
+                    "strings": {
+                        "match_mapping_type": "string",
+                        "mapping": {
+                            "index": "not_analyzed",
+                            "type": "string"
+                        }
+                    }
+                }
+            ],
+            "properties": {
+                "businessLifecycleCd": {
+                    "type": "keyword"
+                },
+                "doctimestamp": {
+                    "type": "date"
+                },
+                "id": {
+                    "type": "keyword"
+                },
+                "investmentClientSelection": {
+                    "include_in_all": true,
+                    "properties": {
+                        "AccessToRetrofree": {
+                            "type": "keyword"
+                        },
+                        "AfterOfficeHour": {
+                            "type": "keyword"
+                        },
+                        "AfterTaxOptimization": {
+                            "type": "keyword"
+                        },
+                        "AssetAllocationHC": {
+                            "type": "keyword"
+                        },
+                        "BMInContract": {
+                            "type": "keyword"
+                        },
+                        "BMReport": {
+                            "type": "keyword"
+                        },
+                        "BaseAllocation": {
+                            "type": "keyword"
+                        },
+                        "BondFocus": {
+                            "type": "keyword"
+                        },
+                        "BulkRiskHC": {
+                            "type": "keyword"
+                        },
+                        "CashMgmt": {
+                            "type": "keyword"
+                        },
+                        "CountryFlavor": {
+                            "type": "keyword"
+                        },
+                        "CurrencyBets": {
+                            "type": "keyword"
+                        },
+                        "CurrencyHedging": {
+                            "type": "keyword"
+                        },
+                        "Derivatives": {
+                            "type": "keyword"
+                        },
+                        "DiscountCertificates": {
+                            "type": "keyword"
+                        },
+                        "EFOCUS": {
+                            "type": "keyword"
+                        },
+                        "Equities": {
+                            "type": "keyword"
+                        },
+                        "EquityAdvice": {
+                            "type": "keyword"
+                        },
+                        "ExTradeDerivative": {
+                            "type": "keyword"
+                        },
+                        "FeeScheme": {
+                            "type": "keyword"
+                        },
+                        "FixedIncome": {
+                            "type": "keyword"
+                        },
+                        "FixedIncomeAdvice": {
+                            "type": "keyword"
+                        },
+                        "FixedIncomeDuration": {
+                            "type": "keyword"
+                        },
+                        "FixedIncomeQuality": {
+                            "type": "keyword"
+                        },
+                        "ForExPreciousMetal": {
+                            "type": "keyword"
+                        },
+                        "FundUniverse": {
+                            "type": "keyword"
+                        },
+                        "HDGEFU": {
+                            "type": "keyword"
+                        },
+                        "INSTR": {
+                            "type": "keyword"
+                        },
+                        "INVSTR": {
+                            "type": "keyword"
+                        },
+                        "IlliquidHF": {
+                            "type": "keyword"
+                        },
+                        "IlliquidRE": {
+                            "type": "keyword"
+                        },
+                        "IncomeSegregation": {
+                            "type": "keyword"
+                        },
+                        "InvestmentApproach": {
+                            "type": "keyword"
+                        },
+                        "InvestmentFunds": {
+                            "type": "keyword"
+                        },
+                        "InvestmentUniverse": {
+                            "type": "keyword"
+                        },
+                        "IssuerRiskHC": {
+                            "type": "keyword"
+                        },
+                        "ItalyCheck": {
+                            "type": "keyword"
+                        },
+                        "LegalReport": {
+                            "type": "keyword"
+                        },
+                        "LossReport": {
+                            "type": "keyword"
+                        },
+                        "LowRatedBondsHC": {
+                            "type": "keyword"
+                        },
+                        "MoneyMarketLiquidity": {
+                            "type": "keyword"
+                        },
+                        "NTAC": {
+                            "type": "keyword"
+                        },
+                        "NotiMarkUpdates": {
+                            "type": "keyword"
+                        },
+                        "NotiPFAnalysis": {
+                            "type": "keyword"
+                        },
+                        "NotiRatChanges": {
+                            "type": "keyword"
+                        },
+                        "OutsideMonitorUniHC": {
+                            "type": "keyword"
+                        },
+                        "PMC": {
+                            "type": "keyword"
+                        },
+                        "PrivateDebt": {
+                            "type": "keyword"
+                        },
+                        "PrivateEquity": {
+                            "type": "keyword"
+                        },
+                        "ProductRiskClassifHC": {
+                            "type": "keyword"
+                        },
+                        "REFCCY": {
+                            "type": "keyword"
+                        },
+                        "RELEST": {
+                            "type": "keyword"
+                        },
+                        "RiskReturnHC": {
+                            "type": "keyword"
+                        },
+                        "STIO": {
+                            "type": "keyword"
+                        },
+                        "SellRatingHC": {
+                            "type": "keyword"
+                        },
+                        "ServiceModel": {
+                            "type": "keyword"
+                        },
+                        "ServiceType": {
+                            "type": "keyword"
+                        },
+                        "SingleBonds": {
+                            "type": "keyword"
+                        },
+                        "SingleStocks": {
+                            "type": "keyword"
+                        },
+                        "SpecificSolutionId": {
+                            "type": "keyword"
+                        },
+                        "Streamlining": {
+                            "type": "keyword"
+                        },
+                        "StructuredProducts": {
+                            "type": "keyword"
+                        },
+                        "SuitabilitySetCd": {
+                            "type": "keyword"
+                        },
+                        "Sustainability": {
+                            "type": "keyword"
+                        },
+                        "TaxState": {
+                            "type": "keyword"
+                        },
+                        "TradeConfirmation": {
+                            "type": "keyword"
+                        },
+                        "UBSHouseView": {
+                            "type": "keyword"
+                        },
+                        "Wrapped": {
+                            "type": "keyword"
+                        },
+                        "eDelivery": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "investmentSopId": {
+                    "include_in_all": true,
+                    "properties": {
+                        "AccessToRetrofree": {
+                            "type": "keyword"
+                        },
+                        "AfterOfficeHour": {
+                            "type": "keyword"
+                        },
+                        "AfterTaxOptimization": {
+                            "type": "keyword"
+                        },
+                        "AssetAllocationHC": {
+                            "type": "keyword"
+                        },
+                        "BMInContract": {
+                            "type": "keyword"
+                        },
+                        "BMReport": {
+                            "type": "keyword"
+                        },
+                        "BaseAllocation": {
+                            "type": "keyword"
+                        },
+                        "BondFocus": {
+                            "type": "keyword"
+                        },
+                        "BulkRiskHC": {
+                            "type": "keyword"
+                        },
+                        "CashMgmt": {
+                            "type": "keyword"
+                        },
+                        "CountryFlavor": {
+                            "type": "keyword"
+                        },
+                        "CurrencyBets": {
+                            "type": "keyword"
+                        },
+                        "CurrencyHedging": {
+                            "type": "keyword"
+                        },
+                        "Derivatives": {
+                            "type": "keyword"
+                        },
+                        "DiscountCertificates": {
+                            "type": "keyword"
+                        },
+                        "EFOCUS": {
+                            "type": "keyword"
+                        },
+                        "Equities": {
+                            "type": "keyword"
+                        },
+                        "EquityAdvice": {
+                            "type": "keyword"
+                        },
+                        "ExTradeDerivative": {
+                            "type": "keyword"
+                        },
+                        "FeeScheme": {
+                            "type": "keyword"
+                        },
+                        "FixedIncome": {
+                            "type": "keyword"
+                        },
+                        "FixedIncomeAdvice": {
+                            "type": "keyword"
+                        },
+                        "FixedIncomeDuration": {
+                            "type": "keyword"
+                        },
+                        "FixedIncomeQuality": {
+                            "type": "keyword"
+                        },
+                        "ForExPreciousMetal": {
+                            "type": "keyword"
+                        },
+                        "FundUniverse": {
+                            "type": "keyword"
+                        },
+                        "HDGEFU": {
+                            "type": "keyword"
+                        },
+                        "INSTR": {
+                            "type": "keyword"
+                        },
+                        "INVSTR": {
+                            "type": "keyword"
+                        },
+                        "IlliquidHF": {
+                            "type": "keyword"
+                        },
+                        "IlliquidRE": {
+                            "type": "keyword"
+                        },
+                        "IncomeSegregation": {
+                            "type": "keyword"
+                        },
+                        "InvestmentApproach": {
+                            "type": "keyword"
+                        },
+                        "InvestmentFunds": {
+                            "type": "keyword"
+                        },
+                        "InvestmentUniverse": {
+                            "type": "keyword"
+                        },
+                        "IssuerRiskHC": {
+                            "type": "keyword"
+                        },
+                        "ItalyCheck": {
+                            "type": "keyword"
+                        },
+                        "LegalReport": {
+                            "type": "keyword"
+                        },
+                        "LossReport": {
+                            "type": "keyword"
+                        },
+                        "LowRatedBondsHC": {
+                            "type": "keyword"
+                        },
+                        "MoneyMarketLiquidity": {
+                            "type": "keyword"
+                        },
+                        "NTAC": {
+                            "type": "keyword"
+                        },
+                        "NotiMarkUpdates": {
+                            "type": "keyword"
+                        },
+                        "NotiPFAnalysis": {
+                            "type": "keyword"
+                        },
+                        "NotiRatChanges": {
+                            "type": "keyword"
+                        },
+                        "OutsideMonitorUniHC": {
+                            "type": "keyword"
+                        },
+                        "PMC": {
+                            "type": "keyword"
+                        },
+                        "PrivateDebt": {
+                            "type": "keyword"
+                        },
+                        "PrivateEquity": {
+                            "type": "keyword"
+                        },
+                        "ProductBusinessCode": {
+                            "type": "keyword"
+                        },
+                        "ProductRiskClassifHC": {
+                            "type": "keyword"
+                        },
+                        "REFCCY": {
+                            "type": "keyword"
+                        },
+                        "RELEST": {
+                            "type": "keyword"
+                        },
+                        "RiskReturnHC": {
+                            "type": "keyword"
+                        },
+                        "STIO": {
+                            "type": "keyword"
+                        },
+                        "SellRatingHC": {
+                            "type": "keyword"
+                        },
+                        "ServiceModel": {
+                            "type": "keyword"
+                        },
+                        "ServiceType": {
+                            "type": "keyword"
+                        },
+                        "SingleBonds": {
+                            "type": "keyword"
+                        },
+                        "SingleStocks": {
+                            "type": "keyword"
+                        },
+                        "SpecificSolutionId": {
+                            "type": "keyword"
+                        },
+                        "Streamlining": {
+                            "type": "keyword"
+                        },
+                        "StructuredProducts": {
+                            "type": "keyword"
+                        },
+                        "SuitabilitySetCd": {
+                            "type": "keyword"
+                        },
+                        "Sustainability": {
+                            "type": "keyword"
+                        },
+                        "TaxState": {
+                            "type": "keyword"
+                        },
+                        "TradeConfirmation": {
+                            "type": "keyword"
+                        },
+                        "UBSHouseView": {
+                            "type": "keyword"
+                        },
+                        "Wrapped": {
+                            "type": "keyword"
+                        },
+                        "eDelivery": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "mandatorOwner": {
+                    "type": "keyword"
+                },
+                "objectUidDomainId": {
+                    "type": "keyword"
+                },
+                "objectUidIpid": {
+                    "type": "keyword"
+                },
+                "offeringBusinessCd": {
+                    "type": "keyword"
+                },
+                "processingCenterId": {
+                    "type": "keyword"
+                },
+                "serviceClientSelection": {
+                    "include_in_all": true,
+                    "properties": {
+                        "AccessToRetrofree": {
+                            "type": "keyword"
+                        },
+                        "AfterOfficeHour": {
+                            "type": "keyword"
+                        },
+                        "AfterTaxOptimization": {
+                            "type": "keyword"
+                        },
+                        "AssetAllocationHC": {
+                            "type": "keyword"
+                        },
+                        "BMInContract": {
+                            "type": "keyword"
+                        },
+                        "BMReport": {
+                            "type": "keyword"
+                        },
+                        "BaseAllocation": {
+                            "type": "keyword"
+                        },
+                        "BondFocus": {
+                            "type": "keyword"
+                        },
+                        "BulkRiskHC": {
+                            "type": "keyword"
+                        },
+                        "CashMgmt": {
+                            "type": "keyword"
+                        },
+                        "CountryFlavor": {
+                            "type": "keyword"
+                        },
+                        "CurrencyBets": {
+                            "type": "keyword"
+                        },
+                        "CurrencyHedging": {
+                            "type": "keyword"
+                        },
+                        "Derivatives": {
+                            "type": "keyword"
+                        },
+                        "DiscountCertificates": {
+                            "type": "keyword"
+                        },
+                        "EFOCUS": {
+                            "type": "keyword"
+                        },
+                        "Equities": {
+                            "type": "keyword"
+                        },
+                        "EquityAdvice": {
+                            "type": "keyword"
+                        },
+                        "ExTradeDerivative": {
+                            "type": "keyword"
+                        },
+                        "FeeScheme": {
+                            "type": "keyword"
+                        },
+                        "FixedIncome": {
+                            "type": "keyword"
+                        },
+                        "FixedIncomeAdvice": {
+                            "type": "keyword"
+                        },
+                        "FixedIncomeDuration": {
+                            "type": "keyword"
+                        },
+                        "FixedIncomeQuality": {
+                            "type": "keyword"
+                        },
+                        "ForExPreciousMetal": {
+                            "type": "keyword"
+                        },
+                        "FundUniverse": {
+                            "type": "keyword"
+                        },
+                        "HDGEFU": {
+                            "type": "keyword"
+                        },
+                        "INSTR": {
+                            "type": "keyword"
+                        },
+                        "INVSTR": {
+                            "type": "keyword"
+                        },
+                        "IlliquidHF": {
+                            "type": "keyword"
+                        },
+                        "IlliquidRE": {
+                            "type": "keyword"
+                        },
+                        "IncomeSegregation": {
+                            "type": "keyword"
+                        },
+                        "InvestmentApproach": {
+                            "type": "keyword"
+                        },
+                        "InvestmentFunds": {
+                            "type": "keyword"
+                        },
+                        "InvestmentUniverse": {
+                            "type": "keyword"
+                        },
+                        "IssuerRiskHC": {
+                            "type": "keyword"
+                        },
+                        "ItalyCheck": {
+                            "type": "keyword"
+                        },
+                        "LegalReport": {
+                            "type": "keyword"
+                        },
+                        "LossReport": {
+                            "type": "keyword"
+                        },
+                        "LowRatedBondsHC": {
+                            "type": "keyword"
+                        },
+                        "MoneyMarketLiquidity": {
+                            "type": "keyword"
+                        },
+                        "NTAC": {
+                            "type": "keyword"
+                        },
+                        "NotiMarkUpdates": {
+                            "type": "keyword"
+                        },
+                        "NotiPFAnalysis": {
+                            "type": "keyword"
+                        },
+                        "NotiRatChanges": {
+                            "type": "keyword"
+                        },
+                        "OutsideMonitorUniHC": {
+                            "type": "keyword"
+                        },
+                        "PMC": {
+                            "type": "keyword"
+                        },
+                        "PrivateDebt": {
+                            "type": "keyword"
+                        },
+                        "PrivateEquity": {
+                            "type": "keyword"
+                        },
+                        "ProductBusinessCode": {
+                            "type": "keyword"
+                        },
+                        "ProductRiskClassifHC": {
+                            "type": "keyword"
+                        },
+                        "REFCCY": {
+                            "type": "keyword"
+                        },
+                        "RELEST": {
+                            "type": "keyword"
+                        },
+                        "RiskReturnHC": {
+                            "type": "keyword"
+                        },
+                        "STIO": {
+                            "type": "keyword"
+                        },
+                        "SellRatingHC": {
+                            "type": "keyword"
+                        },
+                        "ServiceModel": {
+                            "type": "keyword"
+                        },
+                        "ServiceType": {
+                            "type": "keyword"
+                        },
+                        "SingleBonds": {
+                            "type": "keyword"
+                        },
+                        "SingleStocks": {
+                            "type": "keyword"
+                        },
+                        "SpecificSolutionId": {
+                            "type": "keyword"
+                        },
+                        "Streamlining": {
+                            "type": "keyword"
+                        },
+                        "StructuredProducts": {
+                            "type": "keyword"
+                        },
+                        "SuitabilitySetCd": {
+                            "type": "keyword"
+                        },
+                        "Sustainability": {
+                            "type": "keyword"
+                        },
+                        "TaxState": {
+                            "type": "keyword"
+                        },
+                        "TradeConfirmation": {
+                            "type": "keyword"
+                        },
+                        "UBSHouseView": {
+                            "type": "keyword"
+                        },
+                        "Wrapped": {
+                            "type": "keyword"
+                        },
+                        "eDelivery": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "serviceSopId": {
+                    "include_in_all": true,
+                    "properties": {
+                        "AccessToRetrofree": {
+                            "type": "keyword"
+                        },
+                        "AfterOfficeHour": {
+                            "type": "keyword"
+                        },
+                        "AfterTaxOptimization": {
+                            "type": "keyword"
+                        },
+                        "AssetAllocationHC": {
+                            "type": "keyword"
+                        },
+                        "BMInContract": {
+                            "type": "keyword"
+                        },
+                        "BMReport": {
+                            "type": "keyword"
+                        },
+                        "BaseAllocation": {
+                            "type": "keyword"
+                        },
+                        "BondFocus": {
+                            "type": "keyword"
+                        },
+                        "BulkRiskHC": {
+                            "type": "keyword"
+                        },
+                        "CashMgmt": {
+                            "type": "keyword"
+                        },
+                        "CountryFlavor": {
+                            "type": "keyword"
+                        },
+                        "CurrencyBets": {
+                            "type": "keyword"
+                        },
+                        "CurrencyHedging": {
+                            "type": "keyword"
+                        },
+                        "Derivatives": {
+                            "type": "keyword"
+                        },
+                        "DiscountCertificates": {
+                            "type": "keyword"
+                        },
+                        "EFOCUS": {
+                            "type": "keyword"
+                        },
+                        "Equities": {
+                            "type": "keyword"
+                        },
+                        "EquityAdvice": {
+                            "type": "keyword"
+                        },
+                        "ExTradeDerivative": {
+                            "type": "keyword"
+                        },
+                        "FeeScheme": {
+                            "type": "keyword"
+                        },
+                        "FixedIncome": {
+                            "type": "keyword"
+                        },
+                        "FixedIncomeAdvice": {
+                            "type": "keyword"
+                        },
+                        "FixedIncomeDuration": {
+                            "type": "keyword"
+                        },
+                        "FixedIncomeQuality": {
+                            "type": "keyword"
+                        },
+                        "ForExPreciousMetal": {
+                            "type": "keyword"
+                        },
+                        "FundUniverse": {
+                            "type": "keyword"
+                        },
+                        "HDGEFU": {
+                            "type": "keyword"
+                        },
+                        "INSTR": {
+                            "type": "keyword"
+                        },
+                        "INVSTR": {
+                            "type": "keyword"
+                        },
+                        "IlliquidHF": {
+                            "type": "keyword"
+                        },
+                        "IlliquidRE": {
+                            "type": "keyword"
+                        },
+                        "IncomeSegregation": {
+                            "type": "keyword"
+                        },
+                        "InvestmentApproach": {
+                            "type": "keyword"
+                        },
+                        "InvestmentFunds": {
+                            "type": "keyword"
+                        },
+                        "InvestmentUniverse": {
+                            "type": "keyword"
+                        },
+                        "IssuerRiskHC": {
+                            "type": "keyword"
+                        },
+                        "ItalyCheck": {
+                            "type": "keyword"
+                        },
+                        "LegalReport": {
+                            "type": "keyword"
+                        },
+                        "LossReport": {
+                            "type": "keyword"
+                        },
+                        "LowRatedBondsHC": {
+                            "type": "keyword"
+                        },
+                        "MoneyMarketLiquidity": {
+                            "type": "keyword"
+                        },
+                        "NTAC": {
+                            "type": "keyword"
+                        },
+                        "NotiMarkUpdates": {
+                            "type": "keyword"
+                        },
+                        "NotiPFAnalysis": {
+                            "type": "keyword"
+                        },
+                        "NotiRatChanges": {
+                            "type": "keyword"
+                        },
+                        "OutsideMonitorUniHC": {
+                            "type": "keyword"
+                        },
+                        "PMC": {
+                            "type": "keyword"
+                        },
+                        "PrivateDebt": {
+                            "type": "keyword"
+                        },
+                        "PrivateEquity": {
+                            "type": "keyword"
+                        },
+                        "ProductRiskClassifHC": {
+                            "type": "keyword"
+                        },
+                        "REFCCY": {
+                            "type": "keyword"
+                        },
+                        "RELEST": {
+                            "type": "keyword"
+                        },
+                        "RiskReturnHC": {
+                            "type": "keyword"
+                        },
+                        "STIO": {
+                            "type": "keyword"
+                        },
+                        "SellRatingHC": {
+                            "type": "keyword"
+                        },
+                        "ServiceModel": {
+                            "type": "keyword"
+                        },
+                        "ServiceType": {
+                            "type": "keyword"
+                        },
+                        "SingleBonds": {
+                            "type": "keyword"
+                        },
+                        "SingleStocks": {
+                            "type": "keyword"
+                        },
+                        "SpecificSolutionId": {
+                            "type": "keyword"
+                        },
+                        "Streamlining": {
+                            "type": "keyword"
+                        },
+                        "StructuredProducts": {
+                            "type": "keyword"
+                        },
+                        "SuitabilitySetCd": {
+                            "type": "keyword"
+                        },
+                        "Sustainability": {
+                            "type": "keyword"
+                        },
+                        "TaxState": {
+                            "type": "keyword"
+                        },
+                        "TradeConfirmation": {
+                            "type": "keyword"
+                        },
+                        "UBSHouseView": {
+                            "type": "keyword"
+                        },
+                        "Wrapped": {
+                            "type": "keyword"
+                        },
+                        "eDelivery": {
+                            "type": "keyword"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
