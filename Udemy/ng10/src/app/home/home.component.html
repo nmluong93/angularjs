@@ -1,0 +1,28 @@
+<div class="container color-dark">
+
+  <div class="col">
+    <p>Add a bucket list items</p>
+  </div>
+  <div class="col">
+    <p>Your bucket list is ({{itemCount}})</p>
+  </div>
+</div>
+<div class="container color-light">
+  <div class="col">
+    <p>Use this form to add a new bucket list goal. What do you want to add?</p>
+    <form>
+      <input type="text" class="txt" name="item" placeholder="Life goal..." [(ngModel)]="goalText" ><!--two way binding-->
+      <br><span>{{goalText}}</span>
+      <!--This is interpolation-->
+      <!-- <input type="submit" class="btn" value="{{btnText}}"> -->
+      <!-- use property binding-->
+      <input type="submit" class="btn" [value]="btnText" (click)="addItem()"> <!--event-->
+      
+    </form>
+  </div>
+  <div class="col">
+    <p class="life-container" *ngFor="let goal of goals"> <!--iterate over goals property-->
+      {{goal}} <!--interpolation-->
+    </p>
+  </div>
+</div>
