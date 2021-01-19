@@ -7,7 +7,7 @@
     <p>Your bucket list is ({{itemCount}})</p>
   </div>
 </div>
-<div class="container color-light">
+<div class="container color-light" [@goalAnimation] ="goals.length">
   <div class="col">
     <p>Use this form to add a new bucket list goal. What do you want to add?</p>
     <form>
@@ -21,7 +21,7 @@
     </form>
   </div>
   <div class="col">
-    <p class="life-container" *ngFor="let goal of goals"> <!--iterate over goals property-->
+    <p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)"> <!--iterate over goals property-->
       {{goal}} <!--interpolation-->
     </p>
   </div>
